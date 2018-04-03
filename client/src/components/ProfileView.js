@@ -4,13 +4,14 @@ class ProfileView extends Component {
   render() {
     var coverStyle = {
       backgroundImage: 'url(' + this.props.profile.profile_cover + ')',
+      backgroundRepeat: 'no-repeat',
       height: 480,
-      width: 900,
-      backgroundRepeat: 'no-repeat' 
+  backgroundSize: '100% 100%',
     };
     return (
-      <div className="app-container">
+      <div className="">
         <div style={coverStyle}></div>
+        <div className="app-container">
         <div className="profile-detail">
           <div className="row">
             <div className="col-md-2">
@@ -31,6 +32,7 @@ class ProfileView extends Component {
           </div>
         </div>
         </div>
+        
         <div className="separator"></div>
         <div className="video-section">
           <div className="text-center"><span className="title"><b>Videos</b></span></div>
@@ -59,6 +61,7 @@ class ProfileView extends Component {
             )       
             })}
           </div>
+        </div>
         </div>
       </div>  
     );

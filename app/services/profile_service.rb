@@ -13,6 +13,7 @@ class ProfileService
     video_arr = []
     url = get_profile_url
     video_url = get_video_url
+    begin
     headless = Headless.new
     headless.start
     browser = Watir::Browser.start url
@@ -41,6 +42,10 @@ class ProfileService
         video_hash[:title] = v.at_css('figure.tw-aspect--16x9 .video-preview-card__preview-image').attr('alt') 
         video_arr.push(video_hash) 
       end
+    end
+    data_hash[:status] = true
+    rescue
+    data_hash= { statue:false, videos: 0, followers: 0, following: 0, profile_name: 'dummy', profile_cover: 'https://static.twitchcdn.net/assets/bg_glitch_pattern-34ca2e369aad1ed33b57f3d2d59c70eb.png', profile_picture: 'https://static-cdn.jtvnw.net/user-default-pictures/27103734-3cda-44d6-a384-f2ab71e4bb85-profile_image-70x70.jpg' }
     end
     data_hash[:video_content] = video_arr
     data_hash

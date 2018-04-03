@@ -10,7 +10,7 @@ class UsersContainer extends Component {
     super(props)
     this.state = {
       users: [],
-      term: 'ninja',
+      term: 'clashroyale',
       loading: true
     }
     this.submit = this.submit.bind(this);
@@ -37,7 +37,6 @@ class UsersContainer extends Component {
     })
       .then(response => {
         this.setState({users: response.data, loading: false})
-        console.log(this.state.users)
       })
       .catch(error => console.log(error));
   }
