@@ -10,7 +10,7 @@ class UsersContainer extends Component {
     super(props)
     this.state = {
       users: [],
-      term: 'leveluplive',
+      term: 'ninja',
       loading: true
     }
     this.submit = this.submit.bind(this);
@@ -56,7 +56,7 @@ class UsersContainer extends Component {
 
               <div className="col-md-6">
                 <form className="search-form" onSubmit={this.submit}>
-                  <input className="custom-input" onChange={this.changeTerm} value={this.state.term}/>
+                  <input placeholder="Search user" className="custom-input" onChange={this.changeTerm} value={this.state.term}/>
                   <button className="search-button" ref="searchForm" type="submit">
                     <svg width="16px" height="16px" viewBox="0 0 18 18" x="0px" y="0px">
                       <path d="M16.707,15.293l-1.414,1.414l-4.825-4.825C9.487,12.58,8.295,13,7,13c-3.313,0-6-2.687-6-6s2.687-6,6-6s6,2.687,6,6c0,1.295-0.42,2.487-1.118,3.468L16.707,15.293z M7,3C4.791,3,3,4.791,3,7s1.791,4,4,4s4-1.791,4-4S9.209,3,7,3z"></path>
